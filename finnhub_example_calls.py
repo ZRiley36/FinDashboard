@@ -1,7 +1,14 @@
 import finnhub
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Setup client
-API_KEY = "d54seu9r01qojbih6ssgd54seu9r01qojbih6st0"
+API_KEY = os.getenv("FINNHUB_API_KEY")
+if not API_KEY:
+    raise ValueError("FINNHUB_API_KEY environment variable is not set. Please create a .env file with your API key.")
+
 finnhub_client = finnhub.Client(api_key=API_KEY)
 
 # Real-time quote (High Usage, available)
