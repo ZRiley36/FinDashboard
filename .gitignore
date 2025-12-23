@@ -33,3 +33,14 @@ wheels/
 *.swo
 *~
 
+# Data and logs
+data/
+logs/
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Keep .gitkeep files
+!data/.gitkeep
+!logs/.gitkeep
+
